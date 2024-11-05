@@ -150,7 +150,7 @@
 				CLASS: HardenAD_PROD-LEGACY
 				This class generate an OU tree used for administration purpose in a tiering model. This is the English Edtion.
 			-->
-			<OU Class="HardenAD_PROD-LEGACY" Name="Harden_TL" Description="Legacy resources">
+			<OU Class="HardenAD_PROD-LEGACY" Name="%OU-PRD-TL%" Description="Legacy resources">
 				<ChildOU Name="%OU-PRD-GROUPS%" Description="Synced with EntraID - group objects (no Exchange groups) (Tier 1 and Tier 2)">
 					<ChildOU Name="%OU-PRD-AADSYNC%" Description="Objects in this OU will not be synched with EntraID" />
 				</ChildOU>
