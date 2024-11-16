@@ -655,7 +655,7 @@
 		<!-- 
 			LEGACY: BLOCK DC LOCATOR REGISTRATION 
 		-->
-		<GPO BackupID="{43B72F81-55EE-4E7E-890B-7B738677B14A}" Validation="Yes" Name="HAD-DCLocaltor-Configuration" Description="--- Harden AD --- &quot; ,&quot; Prevents the DC from generating its DNS entries in -tcp-msdsc.">
+		<GPO BackupID="{43B72F81-55EE-4E7E-890B-7B738677B14A}" Validation="Yes" Name="HAD-DCLocator-Configuration" Description="--- Harden AD --- &quot; ,&quot; Prevents the DC from generating its DNS entries in -tcp-msdsc.">
 			<GpoMode Mode="BOTH" Tier="Tier0" />
 		</GPO>
 		<!-- 
