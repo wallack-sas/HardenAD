@@ -2363,8 +2363,8 @@ Function New-AdministrationAccounts {
 
                             #-Create new user object
                             New-ADUser  -Name $account.DisplayName -AccountNotDelegated $true -AccountPassword $SecPwd -Description $account.description `
-                                        -DisplayName $account.displayName -Enabled $true -GivenName $account.GivenName -SamAccountName $account.sAMAccountName `
-                                        -Surname $account.surname -UserPrincipalName ($account.sAMAccountName + "@" + (Get-Addomain).DNSRoot) `
+                                        -DisplayName $account.displayName -Enabled $true -GivenName $account.GivenName -SamAccountName (Rename-ThroughTranslation $account.sAMAccountName $xmlSkeleton.Settings.Translation.wellKnownID) `
+                                        -Surname $account.surname -UserPrincipalName ((Rename-ThroughTranslation $account.sAMAccountName $xmlSkeleton.Settings.Translation.wellKnownID) + "@" + (Get-Addomain).DNSRoot) `
                                         -Path (Write-OUPath $account.Path) -ErrorAction Stop
 
                             $dbgMess += (Get-Date -UFormat "%Y-%m-%d %T ") + "---> +++ user created: " + $account.displayName
