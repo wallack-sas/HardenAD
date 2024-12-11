@@ -1519,7 +1519,7 @@ Function Set-LapsPermissions {
                 $Granting = $cfgXml.Settings.LocalAdminPasswordSolution.AdmPwdSelfPermission
                 foreach ($Granted in $Granting) {
                     Try {
-                        #$TargetOU = $Granted.Target
+                        $TargetOU = $Granted.Target
                         #foreach ($transID in $translat.wellKnownID) {
                         #    $TargetOU = $TargetOU -replace $TransID.translateFrom, $TransID.translateTo
                         #}
