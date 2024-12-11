@@ -418,8 +418,11 @@ $env:TShistoryLastRun = $TasksSeqConfig.Settings.History.LastRun.Date
 $TShistoryRootDns = $TasksSeqConfig.Settings.History.Domains.Root
 $TShistoryDomainDns = $TasksSeqConfig.Settings.History.Domains.Domain
 
-if ($TShistoryLastRun -eq "" -and $TShistoryRootDns -eq "" -and $TShistoryDomainDns -eq "") {
-    # Script has never run.
+if (($TShistoryLastRun -eq $null -or $TShistoryLastRun.Trim() -eq "") -and
+    ($TShistoryRootDns -eq $null -or $TShistoryRootDns.Trim() -eq "") -and
+    ($TShistoryDomainDns -eq $null -or $TShistoryDomainDns.Trim() -eq "")) {
+    
+    # Si le script n'a jamais été exécuté
     $allowedRun = $True
 }
 else {
