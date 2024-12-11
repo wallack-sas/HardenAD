@@ -1,52 +1,26 @@
 <img src="https://hardenad.net/wp-content/uploads/2021/12/Logo-HARDEN-AD-Horizontal-RVB@4x-300x86.png" align="center">
-This is the version 2.9.9 of the Hardening Active Directory project by then Harden Community. 
-Feel free to use it and adapt following your needs!
 
-# DISCLAIMER
-**ALL TASKS ARE DISABLED BY DEFAULT!**      
-This is the way we ensure the script will not be run into production and make unwanted changes. Please refer to the welcome page of the latest release to learn how you can activate them.
+# Fork of HardenAD
 
-## Release update list  
-Major updates are:  
-1. Fixed issue with LocalAdmin groups name (mismatch between script and schedules)  
-2. Fixed issue with Deny Network Logon permission (Guests was mispealed)  
-3. Fixed issue with Error message when the laps installation fail: it now returns *cancel!* to the script and the script log get the reason (user not a Schema Admins or whatsoever...)  
-   
-There are also plenty of changes related to the core script structure, you can review them in the new **/documentation/Release Update Logs** files.
- 
-## Just a word...
-Welcome to our GitHub Repo dedicated to enhance the security of Active Directory. We both believe in a world were knowledge have to be shared, especialy when we are talking of protecting companies against cyber attacks. Our IT journey drove us to many situation in which we had to harden an existing directory hierarchy, most oftenly lacking of a security posture due to a lack of technical knowledge or usefull guidance.
+This is a fork of the [HardenAD](https://github.com/LoicVeirman/HardenAD), which is licensed under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html). This fork was created to add features and fix certain issues. All modifications are shared in compliance with the GPLv3 license requirements.
 
-This script is intended to assist you in setting-up a hardened directory, based on a strategy derivated from the Microsoft's red-forest model (also known as ESEA). 
+## Changes Made in This Fork
 
-## Tools
-Since 2024/07, I add new script tools to help in fixing minor configuration issue. 
-The scripts are located in *tools\Scripts Fix*.  
-Feel free to use them.  
+The following modifications were made:
 
-## Documentation...
-You can review our documentation here:
-Administrator Guide:  
-> https://hardenad.net/wp-content/uploads/2022/12/Harden-AD-2.9-User-Manual.pdf  
+1. Added translation of `sAMAccountName` and `UPN` during user creation.
+2. Fixed the translation of the `TargetOU`.
+3. Fixed the member name format in `HAD-LocalAdmins` GPOs for T2, T2L, and T1L environments.
+4. Fixed the condition to check if the script has never run.
 
-Quick Setup for lazy guys: 
-> https://hardenad.net/wp-content/uploads/2023/03/Harden-AD-2.9-deploiement-et-personnalisation-du-modele.pdf  
+## Contributions Back to the Original Project
 
-AD Security Training Simplified: 
-> https://hardenad.net/wp-content/uploads/2022/08/Harden-AD-formation-AD-cybsersecurite.pdf  
+We aim to contribute back to the community by creating pull requests for fixes and features that might be valuable for the original project.
 
-## Some videos (French speaking)
-When Guillaume demonstrates Harden AD: https://www.linkedin.com/events/7132717233872474112/comments/
+## License
 
-## Configuration with GUI
-To prevent accidental changes, all the tasks are disabled by default in the XML configuration file.
-To help you to configure this XML file, you can use the GUI.
-Please note that the GUI is only used to set up the HardenAD configuration file and does not perform any other tasks.
+This project is distributed under the [GPLv3 license](https://www.gnu.org/licenses/gpl-3.0.en.html). See the `LICENSE` file for more details.
 
-To run the GUI,options:
-- run `./HardenAD.ps1 -EditConfiguration`
+## Acknowledgments
 
-![image](images/hardenAD-GUI.gif)
-
-## Credit to ... Well. All those mails, tchat threads, ...
-![image](https://github.com/LoicVeirman/HardenAD/assets/85032445/551013f9-8c08-4f5b-864a-624c27ac7b1b)
+Many thanks to the contributors of the [HardenAD](https://github.com/LoicVeirman/HardenAD) for their excellent work.
